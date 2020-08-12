@@ -1,5 +1,9 @@
 SUB Addons_Setup
-
+    |----------------------------------------------------|
+    |Support for having character independant AutoMedBreak settings.
+    |----------------------------------------------------|
+	/if (${Ini[${Character_Ini},General,End MedBreak in Combat(On/Off)].Length}) /call iniToVarV "${Character_Ini},General,End MedBreak in Combat(On/Off)" medOn_combatBreak bool outer
+	/if (${Ini[${Character_Ini},General,AutoMedBreak PctMana].Length}) /call iniToVarV "${Character_Ini},General,AutoMedBreak PctMana" autoMedPctMana int outer
 /Return
 
 SUB Addons_Background_Events
